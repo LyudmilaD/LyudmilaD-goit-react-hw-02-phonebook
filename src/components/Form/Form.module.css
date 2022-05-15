@@ -1,0 +1,32 @@
+.form {
+    width: auto;
+    padding: 10px;
+}
+
+.formLabel {
+
+    margin-bottom: 30px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.input {
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 15px;
+
+}
+
+.wrap {
+    display: block;
+    text-align: center;
+    background-color: #f2ff00;
+    width: auto;
+   
+}
+
+.item {
+    margin-top: 10px;
+    justify-content: space-between;
+    list-style: none;
+}
