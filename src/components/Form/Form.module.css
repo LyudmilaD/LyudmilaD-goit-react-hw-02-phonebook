@@ -1,10 +1,8 @@
 .form {
-    width: auto;
     padding: 10px;
 }
 
 .formLabel {
-
     margin-bottom: 30px;
     padding: 10px;
     justify-content: center;
@@ -14,15 +12,12 @@
     border-radius: 5px;
     padding: 10px;
     margin-left: 15px;
-
 }
 
 .wrap {
-    display: block;
     text-align: center;
     background-color: #f2ff00;
-    width: auto;
-   
+    width: 100%;
 }
 
 .item {
