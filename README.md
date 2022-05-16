@@ -1,1 +1,1 @@
-https://LyudmilaD.github.io/goit-react-hw-02-phonebook/
+goit-react-hw-02-phonebook
