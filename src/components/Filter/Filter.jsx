@@ -6,7 +6,7 @@ function Filter({ value, onChange }) {
       Find contacts by name
       <input
         className={styles.input}
-        tupe="text"
+        type="text"
         value={value}
         onChange={onChange}
       />

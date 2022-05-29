@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import styles from './Form.module.css';
-import React from 'react';
-export class Form extends React.Component {
+import React, { Component } from 'react';
+export class Form extends Component {
   state = {
     name: '',
-    id: nanoid(),
     number: '',
   };
+  static propTypes = {
+    onSubmitForm: PropTypes.func,
+    contacts: PropTypes.arrayOf(PropTypes.object)
+};
 
   handelNameChange = e => {
     this.setState({ name: e.currentTarget.value });
@@ -16,15 +19,33 @@ export class Form extends React.Component {
   handelNumberChange = e => {
     this.setState({ number: e.currentTarget.value });
   };
+  reset = () => {
+    this.setState({ name: '', number: '' });
+};
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
-    this.reset();
-  };
-  reset = () => {
-    this.setState({ name: '', id: '', number: '' });
-  };
+    const { name, number } = this.state;
+        console.log(!this.state.name, !this.state.number);
+
+    if (!this.state.name || !this.state.number) {
+    alert('You have not entered all contact details');
+    return;
+    }
+    const sameName = this.props.contacts.find(arr => arr.name === name);
+    if (sameName) {
+        return alert(`${name} is already in contacts`);
+        }
+        const nameObj = {
+        id: nanoid(),
+        name: name,
+        number: number,
+        };
+        this.props.onSubmit(nameObj);
+        this.reset();
+    };
+
+  
   render() {
     return (
       <>
@@ -66,5 +87,4 @@ export class Form extends React.Component {
 Form.propTypes = {
   onSubmit: PropTypes.func,
 };
-
 export default Form;
